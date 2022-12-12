@@ -1,0 +1,10 @@
+body{
+    
+    min-height: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer{
+    
+}

@@ -1,0 +1,41 @@
+<!-- Add Code Modal -->
+<div class="modal fade" id="add-code-modal" tabindex="-1" aria-labelledby="add-code-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="add-code-modal-label">Add a New Code</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form>
+          <div class="modal-body text-start">
+            <div class="mb-3 mt-2">
+                <label for="brand" class="form-label">Code Brand</label>
+                <select class="form-select" aria-label="Default select example" name="brand" id="brand" required>
+                    <option selected>Select A Brand</option>
+                    <option value="PlayStation">PlayStation</option>
+                    <option value="Apple">Apple</option>
+                    <option value="GooglePlay">Google Play</option>
+                  </select>
+            </div>
+  
+            <div class="mb-3 mt-2">
+              <label for="price" class="form-label">Code Price in SAR</label>
+              <input type="number" class="form-control" id="price" name="price" placeholder="25 SAR" required min="1"/>
+            </div>
+
+            <div class="mb-3 mt-2">
+                <label for="code" class="form-label">Redeeming Code</label>
+                <input type="text" class="form-control" id="code" name="code" placeholder="wadl2Xaldv" required/>
+              </div>
+  
+          </div>
+          <div class="modal-footer justify-content-between">
+            <div>
+              <button type="button" onclick="addCode()" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+        </form>
+        </div>
+
+    </div>
+  </div>

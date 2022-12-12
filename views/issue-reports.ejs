@@ -1,0 +1,29 @@
+<%- include ("partials/header") %>
+<% if(user.role=='admin' ) { %>
+    <%- include ("partials/add-code-modal") %>
+        <% } %>
+
+
+        <main>
+            <div> <h1>Issue Reports</h1>
+                <div class="container">
+                    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 justify-content-center" id="cards">
+                         <% for(let i = issues.length-1; i>=0; i-- ) { %>
+                            <% if ( user.role =='admin') { %>
+                                <div>
+                                    <h3>Issue: <%= issues[i].issue %></h3>
+                                    <h3>Issue: <%= issues[i].description %></h3>
+                                    <h3>Issue: <%= issues[i].status %></h3>
+                                    <h3>Issue: <%= issues[i].date %></h3>
+                                </div>
+                            <% } %> 
+                        <% } %>
+                
+                            <div>
+                                ss
+
+                            </div>
+                            
+            </div>
+
+        </main>

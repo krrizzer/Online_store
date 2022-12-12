@@ -1,0 +1,44 @@
+<%- include ("partials/header") %>
+<% if(user.role=='admin' ) { %>
+    <%- include ("partials/add-code-modal") %>
+        <% } %>
+
+    <main>
+
+
+  
+
+                <div class="container">
+                    <% if(user.role=='admin' ){ %>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#add-code-modal">
+                        Add a New Code
+                    </button>
+                        <% } %>
+                                <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 justify-content-center" id="cards">
+                                    <% for(let i = codes.length-1; i>=0; i-- ) { %>
+                                        <% if ((user.role== 'user' & codes[i].status == 'available') || user.role =='admin') { %>
+                                          <div class="col card m-3" style="width: 18rem">
+                                            <img src="<%=codes[i].image%>" class="card-img-top" alt="..." height="200" />
+                                            <div class="card-body">
+                                              <h5 class="card-title"> <strong><%= codes[i].brand%></strong> Redeem Card</h5>
+                                              <p class="card-text">Price: <strong><%= codes[i].price %></strong> SAR</p>
+                                    
+                                              <% if(user.role == 'admin') { %>
+                                              <a href="/edit/<%= codes[i]._id %>" class="btn btn-primary">Edit</a>
+                                              <a href="/delete/<%= codes[i]._id %>" class="btn btn-danger"
+                                                >Delete</a
+                                              >
+                                              <% } else { %>
+                                              <a href="/buy/<%= codes[i]._id %>" class="btn btn-primary">Buy</a>
+                                              <% } %>
+                                            </div>
+                                          </div>
+                                          <% } }%>
+                                </div>
+                            </div>
+                
+    </main>
+
+    <script src="/js/backend.js"></script>
+    <%- include ("partials/footer") %>
